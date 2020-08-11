@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+set -o errexit -o pipefail -o nounset
+
+script_install_path="${HOME}/bin/knv"
+package_install_path="${HOME}/.knv"
+package_main="${package_install_path}/main"
+
+echo "Installing knv cli to ${script_install_path}"
+
+# Remove old version
+rm -rf "${package_install_path}"
+mkdir "${package_install_path}"
+cp -r "$(pwd)/" "${package_install_path}"
+cp "$(pwd)/uninstall" "${package_install_path}/uninstall"
+
+# Put script in ~/bin
+echo "#!/usr/bin/env bash" > "${script_install_path}"
+echo "set -o errexit -o pipefail -o nounset" >> "${script_install_path}"
+echo "${package_main} \$@" >> "${script_install_path}"
+
+chmod +x "${script_install_path}"
+chmod +x "${package_main}"
+chmod -x "${package_install_path}/uninstall"
+
+echo "Done!"

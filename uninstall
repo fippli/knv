@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+set -o errexit -o pipefail -o nounset
+
+script_install_path="${HOME}/bin/knv"
+
+echo "Removing knv cli from ${script_install_path}"
+
+rm -rf "${script_install_path}"
+rm -rf "${HOME}/.knv"
+
+echo "Done!"

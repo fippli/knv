@@ -1,0 +1,61 @@
+#!/usr/bin/env bash
+set -o errexit -o pipefail -o nounset
+
+path_to_this_dir="$(pwd)"
+name_of_this_dir="$(basename "${path_to_this_dir}")"
+image_name="${name_of_this_dir}"
+dockerfile=${2:-"Dockerfile"}
+
+build () {
+  docker image build \
+    --tag "${image_name}" \
+    --file "${dockerfile}" .
+}
+
+run () {
+  docker container run \
+  --rm \
+  --publish=8000:80 \
+  "${image_name}"
+}
+
+help_message () {
+  echo "Usage:"
+  echo "knv"
+  echo "knv build | knv build some-dockerfile"
+  echo "knv run"
+  echo "Source code: https://github.com/fippli/knv"
+}
+
+menu () {
+  while test $# -gt 0; do
+    case "$1" in
+      help)
+        help_message
+        exit 0
+        ;;
+      build)
+        build
+        exit 0
+        ;;
+      run)
+        run
+        exit 0
+        ;;
+      *)
+        echo "Argument not supported"
+        break
+        ;;
+    esac
+  done
+}
+
+main () {
+  if [ $# -eq 0 ]; then
+      build
+      run
+  fi
+  menu "$@"
+}
+
+main "$@"
