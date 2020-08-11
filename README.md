@@ -1,6 +1,7 @@
-# Knölig val
 
-<img src="./knv.png" alt="" style="width: 300px; margin: 0 auto" />
+# Knölig val
+<img src="./knv.png" alt="" width="200"/>
+
 
 Command line script to easily build and run docker images in your current directory.
 
