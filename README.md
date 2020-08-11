@@ -25,9 +25,25 @@ Do both of the above.
 knv
 ```
 
+Get help!
+```bash
+# in/some/dir/to/project_name
+knv help
+```
+
 ## Super Advanced Usage
 Build some dockerfile that is not called `Dockerfile`:
 ```bash
 # in/some/dir/to/project_name
 knv build knöligt-dockerfile-name
+```
+
+## Installation
+```bash
+bash install
+```
+
+## Removal
+```bash
+bash uninstall
 ```
