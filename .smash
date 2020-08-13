@@ -1,3 +1,2 @@
 NAME=knv
-VERSION=0.0.1
-MAIN=src/main
+MAIN=main
