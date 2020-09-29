@@ -1,0 +1,13 @@
+Knölig Val (knv)
+
+Build and run a docker image built from the 
+Dockerfile existing in the current directory.
+
+Available commands
+  help                      Display this message
+  build | build <filename>  Build a Dockerfile. Defaults to "Dockerfile"
+                            if no filename is specified
+  run                       Run the image built on the Dockerfile in
+                            "this" directory
+  (no command)              Run both build and run
+

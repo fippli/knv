@@ -15,16 +15,13 @@ build () {
 run () {
   docker container run \
   --rm \
+  --env-file .env \
   --publish=8000:80 \
   "${image_name}"
 }
 
 help_message () {
-  echo "Usage:"
-  echo "knv"
-  echo "knv build | knv build some-dockerfile"
-  echo "knv run"
-  echo "Source code: https://github.com/fippli/knv"
+  cat "$(dirname "${BASH_SOURCE[0]}")/help.txt"
 }
 
 read_options () {
@@ -43,7 +40,7 @@ read_options () {
         exit 0
         ;;
       *)
-        echo "Argument not supported"
+        help_message
         break
         ;;
     esac
