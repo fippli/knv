@@ -1,5 +1,6 @@
 NAME=knv
-MAIN=src/main
+MAIN=main
+COMMAND=bash
 REPOSITORY=git@github.com:fippli/knv.git
-VERSION=0.1.2
+VERSION=0.1.3
 DESCRIPTION=Convenience script for Docker images

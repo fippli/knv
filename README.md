@@ -62,8 +62,8 @@ knv build knöligt-dockerfile-name
 
 ## Installation
 
-[`smash`](https://github.com/fippli/smash) is recommended to use to install the script. Install `smash` and run
+[`climate`](https://github.com/fippli/climate) is recommended to use to install the script. Install `climate` and run
 
 ```
-smash install https://github.com/fippli/knv.git
+climate install https://github.com/fippli/knv.git
 ```
